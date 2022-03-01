@@ -13,6 +13,7 @@ node{
    stage("ssh to remote docker server"){
      sshagent(['Docker_Dev_Server_SSH']) {
 	  sh  'scp -o StrictHostKeyChecking=no  docker-compose.yml ubuntu@172.31.38.117:'
+	  sh  'scp -o StrictHostKeyChecking=no  index.html ubuntu@172.31.38.117:'
 	  sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.38.117 docker-compose up -d'
 	  }
 	  }
