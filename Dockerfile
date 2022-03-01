@@ -4,6 +4,6 @@ FROM ubuntu:latest
 MAINTAINER manju.pothalappa@ecosmob.com 
 
 RUN apt-get update 
-RUN apt-get install –y nginx 
+RUN apt install nginx -y
 EXPOSE 80
 CMD [“echo”,”Image created”] 
