@@ -15,3 +15,4 @@ node{
 	  sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.46.244 docker-compose up -d
 	  }
 	  }
+}
