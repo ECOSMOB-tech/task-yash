@@ -1,7 +1,7 @@
 #!groovy script
 node{
    stage("checkout scm"){
-        git url: 'https://github.com/ECOSMOB-tech/task-yash.git', git branch: 'main'
+       git url: 'https://github.com/ECOSMOB-tech/task-yash.git',branch: 'main'
 		}
    stage("create docker image"){
       sh "docker build -t 172.31.46.244:5000/manju-nginx ."
