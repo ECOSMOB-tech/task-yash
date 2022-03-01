@@ -3,9 +3,9 @@ version: "2.2"
 services:
   nginx-service:
     image: 172.31.38.117:5000/custom_nginx:1
-	container_name: nginx-server
-	ports:
-	- 80:80
-	volumes:
-	- /index.html:/usr/share/nginx/html:
+    container_name: nginx-server
+    ports:
+    - 80:80
+    volumes:
+    - /index.html:/usr/share/nginx/html:
 	
