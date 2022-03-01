@@ -1,0 +1,17 @@
+#!groovy script
+node{
+   stage("checkout scm"){
+        git url: 'git clone https://manjuanu@bitbucket.org/manjuanu/my-first-repo.git', branch: 'master'
+		}
+   stage("create docker image"){
+      sh "docker build -t 172.31.46.244:5000/manju-nginx ."
+	  }
+   stage("pushing image to registery"){
+      sh "docker push 172.31.46.244:5000/manju-nginx"
+	  }
+   stage("ssh to remote docker server"){
+     sshagent(['Docker_Dev_Server_SSH']) {
+	  sh  'scp -o StrictHostKeyChecking=no  docker-compose.yml ubuntu@172.31.46.244:
+	  sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.46.244 docker-compose up -d
+	  }
+	  }
