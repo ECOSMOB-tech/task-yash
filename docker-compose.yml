@@ -1,5 +1,5 @@
 #docker-compose.yml
-version: "2.2"
+version: '3.2'
 services:
   nginx-service:
     image: 172.31.38.117:5000/custom_nginx:1
