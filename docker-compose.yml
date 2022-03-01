@@ -1,0 +1,11 @@
+#docker-compose.yml
+version: "2.2"
+services:
+  nginx-service:
+    image: 172.31.46.244:5000/manju-nginx
+	container_name: nginx-server
+	ports:
+	- 80:80
+	volumes:
+	- ./index.html:/usr/share/nginx/html:
+	
