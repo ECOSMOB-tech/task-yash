@@ -7,7 +7,6 @@ node{
       sh "docker build -t 172.31.46.244:5000/manju-nginx ."
 	  }
    stage("pushing image to registery"){
-      sh "docker image tag 172.31.46.244:5000/manju-nginx 172.31.46.244:5000/manju-nginx"
 	sh "docker push 172.31.46.244:5000/manju-nginx"   
 	  }
    stage("ssh to remote docker server"){
